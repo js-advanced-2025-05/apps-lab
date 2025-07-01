@@ -1,3 +1,11 @@
+const userData = JSON.parse(sessionStorage.getItem('userData'));
+
+if (userData) {
+    document.getElementById('user').style.display = 'inline-block';
+} else {
+    document.getElementById('guest').style.display = 'inline-block';
+}
+
 loadRecipes();
 
 async function loadRecipes() {
