@@ -6,9 +6,8 @@ if (userData) {
   document.getElementById("guest").style.display = "inline-block";
 }
 
-const logoutBtn = document
-  .getElementById("logoutBtn")
-  .addEventListener("click", onLogOut);
+const logoutBtn = document.getElementById("logoutBtn");
+logoutBtn.addEventListener("click", onLogOut);
 
 function onLogOut() {
   sessionStorage.removeItem("userData");
