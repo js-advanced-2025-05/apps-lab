@@ -1,10 +1,19 @@
-const userData = JSON.parse(sessionStorage.getItem('userData'));
+import { showView, getUserData } from './utils.js';
+import { showLoginView } from './login.js';
+import { showCatalogView } from './catalog.js';
 
-if (!userData) {
-    location = '/login.html';
+const section = document.getElementById('create-view');
+section.querySelector('form').addEventListener('submit', onCreate);
+
+export function showCreateView() {
+    if (!getUserData()) {
+        showLoginView();
+
+        return;
+    }
+
+    showView(section);
 }
-
-document.querySelector('form').addEventListener('submit', onCreate);
 
 async function onCreate(event) {
     event.preventDefault();
@@ -23,6 +32,8 @@ async function onCreate(event) {
             throw new Error('All fields are required');
         }
 
+        const userData = getUserData();
+
         const url = 'http://localhost:3030/data/recipes';
         const options = {
             method: 'post',
@@ -40,7 +51,7 @@ async function onCreate(event) {
             throw err;
         }
 
-        location = '/';
+        showCatalogView();
     } catch (error) {
         alert(error.message);
     }

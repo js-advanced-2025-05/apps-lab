@@ -1,4 +1,12 @@
-document.querySelector('form').addEventListener('submit', onLogin);
+import { showCatalogView } from './catalog.js';
+import { showView, updateNav } from './utils.js';
+
+const section = document.getElementById('login-view');
+section.querySelector('form').addEventListener('submit', onLogin);
+
+export function showLoginView() {
+    showView(section);
+}
 
 async function onLogin(event) {
     event.preventDefault();
@@ -34,7 +42,8 @@ async function onLogin(event) {
 
         sessionStorage.setItem('userData', JSON.stringify(userData));
 
-        location = '/';
+        updateNav();
+        showCatalogView();
     } catch (error) {
         alert(error.message);
     }

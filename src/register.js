@@ -1,4 +1,12 @@
-document.querySelector('form').addEventListener('submit', onRegister);
+import { showView, updateNav } from './utils.js';
+import { showCatalogView } from './catalog.js';
+
+const section = document.getElementById('register-view');
+section.querySelector('form').addEventListener('submit', onRegister);
+
+export function showRegisterView() {
+    showView(section);
+}
 
 async function onRegister(event) {
     event.preventDefault();
@@ -41,7 +49,8 @@ async function onRegister(event) {
 
         sessionStorage.setItem('userData', JSON.stringify(userData));
 
-        location = '/';
+        updateNav();
+        showCatalogView();
     } catch (error) {
         alert(error.message);
     }
