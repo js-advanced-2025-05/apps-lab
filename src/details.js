@@ -1,4 +1,4 @@
-import { showView } from './utils.js';
+import { getUserData, showView } from './utils.js';
 
 const section = document.getElementById('details-view');
 
@@ -25,8 +25,16 @@ async function loadRecipe(recipeId) {
 function showRecipe(data) {
     const element = document.createElement('article');
 
+    const userData = getUserData();
+    const isOwner = userData && userData.id == data._ownerId;
+
     element.innerHTML = `
-    <h2>${data.name}</h2>
+    <h2>${data.name}${isOwner ? `
+        <span class="controls">
+            <button>Edit</button>
+            <button>Delete</button>
+        </span>
+        ` : ''}</h2>
     <div class="band">
         <div class="thumb">
             <img src="${data.img}">
