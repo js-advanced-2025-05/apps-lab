@@ -5,6 +5,8 @@ import { showLoginView } from './login.js';
 import { showRegisterView } from './register.js';
 import { showCreateView } from './create.js';
 
+import "./logout.js";
+
 document.getElementById('views').remove();
 
 updateNav();
