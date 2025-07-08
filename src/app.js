@@ -1,11 +1,11 @@
 import { updateNav } from './utils.js';
 import { initNav, navigate } from './nav.js';
 
-import { showCatalogView } from './catalog.js';
-import { showLoginView } from './login.js';
-import { showRegisterView } from './register.js';
-import { showCreateView } from './create.js';
-import { showDetailsView } from './details.js';
+import { showCatalogView } from './views/catalog.js';
+import { showLoginView } from './views/login.js';
+import { showRegisterView } from './views/register.js';
+import { showCreateView } from './views/create.js';
+import { showDetailsView } from './views/details.js';
 
 document.getElementById('views').remove();
 

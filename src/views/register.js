@@ -1,6 +1,6 @@
-import { saveUserData, updateNav } from './utils.js';
-import { register } from './data/user.js';
-import { navigate } from './nav.js';
+import { saveUserData, updateNav } from '../utils.js';
+import { register } from '../data/user.js';
+import { navigate } from '../nav.js';
 
 const section = document.getElementById('register-view');
 section.querySelector('form').addEventListener('submit', onRegister);

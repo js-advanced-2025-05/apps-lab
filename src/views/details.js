@@ -1,5 +1,5 @@
-import { getRecipeById } from './data/recipe.js';
-import { getUserData } from './utils.js';
+import { getRecipeById } from '../data/recipe.js';
+import { getUserData } from '../utils.js';
 
 const section = document.getElementById('details-view');
 

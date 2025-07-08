@@ -1,6 +1,6 @@
-import {  getUserData } from './utils.js';
-import { createRecipe } from './data/recipe.js';
-import { navigate } from './nav.js';
+import {  getUserData } from '../utils.js';
+import { createRecipe } from '../data/recipe.js';
+import { navigate } from '../nav.js';
 
 const section = document.getElementById('create-view');
 section.querySelector('form').addEventListener('submit', onCreate);

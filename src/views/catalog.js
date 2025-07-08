@@ -1,5 +1,5 @@
-import { getAllRecipes } from './data/recipe.js';
-import { navigate, link } from './nav.js';
+import { getAllRecipes } from '../data/recipe.js';
+import { navigate, link } from '../nav.js';
 
 const section = document.getElementById('catalog-view');
 

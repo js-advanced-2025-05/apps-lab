@@ -1,6 +1,6 @@
-import { login } from './data/user.js';
-import { navigate } from './nav.js';
-import { saveUserData, updateNav } from './utils.js';
+import { login } from '../data/user.js';
+import { navigate } from '../nav.js';
+import { saveUserData, updateNav } from '../utils.js';
 
 const section = document.getElementById('login-view');
 section.querySelector('form').addEventListener('submit', onLogin);
