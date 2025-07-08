@@ -1,3 +1,4 @@
+import { getRecipeById } from './data/recipe.js';
 import { getUserData, showView } from './utils.js';
 
 const section = document.getElementById('details-view');
@@ -14,10 +15,7 @@ async function loadRecipe(recipeId) {
     loader.style.color = 'white';
     section.replaceChildren(loader);
 
-    const url = 'http://localhost:3030/data/recipes/' + recipeId;
-
-    const res = await fetch(url);
-    const data = await res.json();
+    const data = await getRecipeById(recipeId);
 
     showRecipe(data);
 }

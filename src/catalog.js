@@ -1,3 +1,4 @@
+import { getAllRecipes } from './data/recipe.js';
 import { showDetailsView } from './details.js';
 import { navigate, showView } from './utils.js';
 
@@ -15,10 +16,7 @@ async function loadRecipes() {
     loader.style.color = 'white';
     section.replaceChildren(loader);
 
-    const url = 'http://localhost:3030/data/recipes?select=_id%2Cname%2Cimg';
-
-    const res = await fetch(url);
-    const data = await res.json();
+    const data = await getAllRecipes();
 
     showRecipes(data);
 }

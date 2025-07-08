@@ -2,6 +2,10 @@ const main = document.querySelector('main');
 
 let userData = null;
 
+export function saveUserData(userData) {
+    sessionStorage.setItem('userData', JSON.stringify(userData));
+}
+
 export function getUserData() {
     return userData;
 }
