@@ -1,12 +1,12 @@
 import { getRecipeById } from './data/recipe.js';
-import { getUserData, showView } from './utils.js';
+import { getUserData } from './utils.js';
 
 const section = document.getElementById('details-view');
 
 export function showDetailsView(recipeId) {
-    showView(section);
-
     loadRecipe(recipeId);
+
+    return section;
 }
 
 async function loadRecipe(recipeId) {

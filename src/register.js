@@ -1,12 +1,12 @@
-import { saveUserData, showView, updateNav } from './utils.js';
-import { showCatalogView } from './catalog.js';
+import { saveUserData, updateNav } from './utils.js';
 import { register } from './data/user.js';
+import { navigate } from './nav.js';
 
 const section = document.getElementById('register-view');
 section.querySelector('form').addEventListener('submit', onRegister);
 
 export function showRegisterView() {
-    showView(section);
+    return section;
 }
 
 async function onRegister(event) {
@@ -35,7 +35,7 @@ async function onRegister(event) {
         });
 
         updateNav();
-        showCatalogView();
+        navigate('catalog-link');
     } catch (error) {
         alert(error.message);
     }

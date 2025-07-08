@@ -1,13 +1,12 @@
 import { getAllRecipes } from './data/recipe.js';
-import { showDetailsView } from './details.js';
-import { navigate, showView } from './utils.js';
+import { navigate, link } from './nav.js';
 
 const section = document.getElementById('catalog-view');
 
 export function showCatalogView() {
-    showView(section);
-
     loadRecipes();
+
+    return section;
 }
 
 async function loadRecipes() {
@@ -37,7 +36,7 @@ function createRecipePreview(record) {
         <img src="${record.img}">
     </div>`;
 
-    element.addEventListener('click', (e) => navigate(e, showDetailsView.bind(null, record._id)));
+    link(element, () => navigate('details', record._id));
 
     return element;
 }

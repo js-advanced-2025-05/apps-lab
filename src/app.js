@@ -1,17 +1,24 @@
-import { navigate, updateNav } from './utils.js';
+import { updateNav } from './utils.js';
+import { initNav, navigate } from './nav.js';
 
 import { showCatalogView } from './catalog.js';
 import { showLoginView } from './login.js';
 import { showRegisterView } from './register.js';
 import { showCreateView } from './create.js';
+import { showDetailsView } from './details.js';
 
 document.getElementById('views').remove();
 
+const views = {
+    'catalog-link': showCatalogView,
+    'login-link': showLoginView,
+    'register-link': showRegisterView,
+    'create-link': showCreateView,
+    'details': showDetailsView
+};
+
+initNav(views);
+
 updateNav();
 
-document.getElementById('catalog-link').addEventListener('click', e => navigate(e, showCatalogView));
-document.getElementById('login-link').addEventListener('click', e => navigate(e, showLoginView));
-document.getElementById('register-link').addEventListener('click', e => navigate(e, showRegisterView));
-document.getElementById('create-link').addEventListener('click', e => navigate(e, showCreateView));
-
-showCatalogView();
+navigate('catalog-link');

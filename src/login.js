@@ -1,12 +1,12 @@
-import { showCatalogView } from './catalog.js';
 import { login } from './data/user.js';
-import { saveUserData, showView, updateNav } from './utils.js';
+import { navigate } from './nav.js';
+import { saveUserData, updateNav } from './utils.js';
 
 const section = document.getElementById('login-view');
 section.querySelector('form').addEventListener('submit', onLogin);
 
 export function showLoginView() {
-    showView(section);
+    return section;
 }
 
 async function onLogin(event) {
@@ -28,7 +28,7 @@ async function onLogin(event) {
         });
 
         updateNav();
-        showCatalogView();
+        navigate('catalog-link');
     } catch (error) {
         alert(error.message);
     }

@@ -1,5 +1,3 @@
-const main = document.querySelector('main');
-
 let userData = null;
 
 export function saveUserData(userData) {
@@ -20,13 +18,4 @@ export function updateNav() {
         document.getElementById('user').style.display = 'none';
         document.getElementById('guest').style.display = 'inline-block';
     }
-}
-
-export function showView(view) {
-    main.replaceChildren(view);
-}
-
-export function navigate(e, callback) {
-    e.preventDefault();
-    callback();
 }

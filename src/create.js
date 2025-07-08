@@ -1,20 +1,18 @@
-import { showView, getUserData } from './utils.js';
-import { showLoginView } from './login.js';
-import { showCatalogView } from './catalog.js';
-import { post } from './data/request.js';
+import {  getUserData } from './utils.js';
 import { createRecipe } from './data/recipe.js';
+import { navigate } from './nav.js';
 
 const section = document.getElementById('create-view');
 section.querySelector('form').addEventListener('submit', onCreate);
 
 export function showCreateView() {
     if (!getUserData()) {
-        showLoginView();
+        navigate('login-link');
 
         return;
     }
 
-    showView(section);
+    return section;
 }
 
 async function onCreate(event) {
@@ -28,13 +26,13 @@ async function onCreate(event) {
     const steps = formData.get('steps').split('\n');
 
     try {
-        if (!recipe.name || !recipe.img || !recipe.ingredients.length || !recipe.steps.length) {
+        if (!name || !img || !ingredients.length || !steps.length) {
             throw new Error('All fields are required');
         }
 
         await createRecipe(name, img, ingredients, steps)
 
-        showCatalogView();
+        navigate('catalog-link');
     } catch (error) {
         alert(error.message);
     }

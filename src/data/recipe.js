@@ -1,4 +1,4 @@
-import { get } from './request.js';
+import { get, post } from './request.js';
 
 export async function getAllRecipes() {
     return get('/data/recipes?select=_id%2Cname%2Cimg');
