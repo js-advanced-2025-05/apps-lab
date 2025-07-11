@@ -9,15 +9,13 @@ export function showView(view) {
     main.replaceChildren(view);
 }
 
-export async function navigate(id, ...params) {
+export function navigate(id, ...params) {
     const view = views[id];
 
     if (typeof view == 'function') {
-        const section = await view(...params);
-
-        if (section) {
-            render(section, main);
-        }
+        view({
+            render: renderMain
+        }, ...params);
     }
 }
 
@@ -38,4 +36,8 @@ export function link(ref, callback) {
 
         callback();
     })
+}
+
+function renderMain(content) {
+    render(content, main);
 }

@@ -19,10 +19,12 @@ const recipePreview = ({ name, img, _id }) => html`
     </div>
 </article>`;
 
-export async function showCatalogView() {
+export async function showCatalogView(ctx) {
+    ctx.render(html`<p style="color: white">Loading...</p>`);
+
     const recipes = await getAllRecipes();
 
-    return catalogTemplate(recipes);
+    ctx.render(catalogTemplate(recipes));
 }
 
 /*
