@@ -1,3 +1,5 @@
+import { render } from '../node_modules/lit-html/lit-html.js';
+
 const main = document.querySelector('main');
 const nav = document.querySelector('nav');
 
@@ -7,14 +9,14 @@ export function showView(view) {
     main.replaceChildren(view);
 }
 
-export function navigate(id, ...params) {
+export async function navigate(id, ...params) {
     const view = views[id];
 
     if (typeof view == 'function') {
-        const section = view(...params);
+        const section = await view(...params);
 
         if (section) {
-            main.replaceChildren(section);
+            render(section, main);
         }
     }
 }

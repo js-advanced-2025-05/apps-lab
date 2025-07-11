@@ -1,47 +1,33 @@
+import { html } from '../../node_modules/lit-html/lit-html.js';
+
 import { getAllRecipes } from '../data/recipe.js';
-import { navigate, link } from '../nav.js';
+import { navigate } from '../nav.js';
 
-const section = document.getElementById('catalog-view');
+const catalogTemplate = (recipes) => html`
+<section id="catalog-view">
+    ${recipes.map(recipePreview)}
+</section>
+`;
 
-export function showCatalogView() {
-    loadRecipes();
-
-    return section;
-}
-
-async function loadRecipes() {
-    const loader = document.createElement('p');
-    loader.textContent = 'Loading...';
-    loader.style.color = 'white';
-    section.replaceChildren(loader);
-
-    const data = await getAllRecipes();
-
-    showRecipes(data);
-}
-
-function showRecipes(recipes) {
-    section.replaceChildren(...recipes.map(createRecipePreview));
-}
-
-function createRecipePreview(record) {
-    const element = document.createElement('article');
-    element.className = 'preview';
-
-    element.innerHTML = `
+const recipePreview = ({ name, img, _id }) => html`
+<article class="preview" @click=${() => navigate('details', _id)}>
     <div class="title">
-        <h2>${record.name}</h2>
+        <h2>${name}</h2>
     </div>
     <div class="small">
-        <img src="${record.img}">
-    </div>`;
+        <img src=${img}>
+    </div>
+</article>`;
 
-    link(element, () => navigate('details', record._id));
+export async function showCatalogView() {
+    const recipes = await getAllRecipes();
 
-    return element;
+    return catalogTemplate(recipes);
 }
 
 /*
+<p style="color: white">Loading...</p>
+
 <article class="preview">
     <div class="title">
         <h2>Title</h2>
