@@ -7,6 +7,8 @@ import { showRegisterView } from './views/register.js';
 import { showCreateView } from './views/create.js';
 import { showDetailsView } from './views/details.js';
 
+import "./logout.js";
+
 document.getElementById('views').remove();
 
 const views = {
