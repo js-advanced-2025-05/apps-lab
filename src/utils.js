@@ -19,3 +19,9 @@ export function updateNav() {
         document.getElementById('guest').style.display = 'inline-block';
     }
 }
+
+export async function logout() {
+    sessionStorage.removeItem('userData');
+    userData = null;
+    updateNav();
+}
