@@ -4,7 +4,7 @@ import { register } from '../data/user.js';
 import { navigate } from '../nav.js';
 import { saveUserData, updateNav } from '../utils.js';
 
-const RegisterTemplate = (onRegister) => html`
+const registerTemplate = (onRegister) => html`
 <section id="register-view">
     <article>
         <h2>Register</h2>
@@ -18,7 +18,7 @@ const RegisterTemplate = (onRegister) => html`
 </section>`;
 
 export function showRegisterView(ctx) {
-    ctx.render(RegisterTemplate(onRegister));
+    ctx.render(registerTemplate(onRegister));
     
     async function onRegister(event) {
         event.preventDefault();
