@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Cookbook</title>
+    <link rel="stylesheet" href="/static/site.css">
+    <link rel="stylesheet" href="/static/recipe.css">
+    <link rel="stylesheet" href="/static/form.css">
+    <link rel="stylesheet" href="/static/comments.css">
+</head>
+
+<body>
+
+    <header>
+        <h1><a href="/"><img src="/assets/logo.png">My Cookbook</a></h1>
+        <nav>
+            <a id="catalogLink" href="/catalog" class="">Catalog</a>
+            <div id="user" style="display: none;">
+                <a id="createLink" href="/create" class="">Create Recipe</a>
+                <a id="logoutBtn" href="javascript:void(0)">Logout</a>
+            </div>
+            <div id="guest" style="display: inline-block;">
+                <a id="loginLink" href="/login" class="active">Login</a>
+                <a id="registerLink" href="/register" class="">Register</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!---->
+        <section id="login">
+            <article>
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <label>E-mail: <input type="text" name="email"></label>
+                    <label>Password: <input type="password" name="password"></label>
+                    <input type="submit" value="Login">
+                </form>
+            </article>
+        </section>
+    </main>
+
+
+
+</body>
+
+</html>

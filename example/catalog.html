@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Cookbook</title>
+    <link rel="stylesheet" href="/static/site.css">
+    <link rel="stylesheet" href="/static/recipe.css">
+    <link rel="stylesheet" href="/static/form.css">
+    <link rel="stylesheet" href="/static/comments.css">
+</head>
+
+<body>
+
+    <header>
+        <h1><a href="/"><img src="/assets/logo.png">My Cookbook</a></h1>
+        <nav>
+            <a id="catalogLink" href="/catalog" class="active">Catalog</a>
+            <div id="user" style="display: inline-block;">
+                <a id="createLink" href="/create">Create Recipe</a>
+                <a id="logoutBtn" href="javascript:void(0)">Logout</a>
+            </div>
+            <div id="guest" style="display: none;">
+                <a id="loginLink" href="/login" class="">Login</a>
+                <a id="registerLink" href="/register">Register</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!---->
+        <section id="catalog">
+            <div class="section-title">
+                <form id="searchForm">
+                    <input type="text" name="search" value="">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+            <header class="section-title"><!--?lit$545493959$-->
+                Page <!--?lit$545493959$-->1 of <!--?lit$545493959$-->1
+                <!--?lit$545493959$-->
+                <!--?lit$545493959$--><!--?-->
+            </header>
+            <!--?lit$545493959$--><!---->
+            <a class="card" href="/details/3987279d-0ad4-4afb-8ca9-5b256ae3b298">
+                <article class="preview">
+                    <div class="title">
+                        <h2><!--?lit$545493959$-->Easy Lasagna</h2>
+                    </div>
+                    <div class="small"><img src="/assets/lasagna.jpg"></div>
+                </article>
+            </a><!----><!---->
+            <a class="card" href="/details/8f414b4f-ab39-4d36-bedb-2ad69da9c830">
+                <article class="preview">
+                    <div class="title">
+                        <h2><!--?lit$545493959$-->Grilled Duck Fillet</h2>
+                    </div>
+                    <div class="small"><img src="/assets/roast.jpg"></div>
+                </article>
+            </a><!----><!---->
+            <a class="card" href="/details/985d9eab-ad2e-4622-a5c8-116261fb1fd2">
+                <article class="preview">
+                    <div class="title">
+                        <h2><!--?lit$545493959$-->Roast Trout</h2>
+                    </div>
+                    <div class="small"><img src="/assets/fish.jpg"></div>
+                </article>
+            </a><!---->
+            <footer class="section-title"><!--?lit$545493959$-->
+                Page <!--?lit$545493959$-->1 of <!--?lit$545493959$-->1
+                <!--?lit$545493959$-->
+                <!--?lit$545493959$--><!--?-->
+            </footer>
+        </section>
+    </main>
+
+
+
+</body>
+
+</html>

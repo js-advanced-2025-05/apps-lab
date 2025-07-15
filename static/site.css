@@ -11,15 +11,33 @@ body {
     margin: 0 auto 0 auto;
 }
 
-header {
+body>header {
     padding: 32px;
     background-color: #cccccc;
     position: relative;
 }
 
 h1 {
-    font-size: 150%;
+    font-size: 32px;
+    line-height: 32px;
+    vertical-align: bottom;
     display: inline;
+}
+
+h1 img {
+    height: 32px;
+    vertical-align: bottom;
+    margin-right: 8px;
+}
+
+h1 a {
+    font-size: 32px;
+    text-decoration: none;
+    color: black;
+}
+
+h1 a:visited {
+    color: black;
 }
 
 main {
@@ -47,6 +65,10 @@ nav a {
     color: black;
 }
 
+nav a:visited {
+    color: black;
+}
+
 nav a:hover {
     background-color: #6c8b47;
     color: white;
@@ -67,4 +89,66 @@ a.active {
 
 #views {
     display: none;
+}
+
+.hero {
+    display: block;
+    width: 850px;
+    margin: 32px auto 32px auto;
+    background-color: #cccccc;
+    box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 32px;
+}
+
+.section-title {
+    display: block;
+    width: 850px;
+    margin: 32px auto 32px auto;
+    background-color: #cccccc;
+    box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 16px 32px;
+}
+
+a {
+    color: #40522a;
+}
+
+a:visited {
+    color: #40522a;
+}
+
+.pager {
+    margin: 0 8px;
+}
+
+.actionLink {
+    display: inline-block;
+    background-color: salmon;
+    padding: 8px 16px;
+    margin: 0 8px;
+    text-decoration: none;
+    color: black;
+}
+
+.actionLink:visited {
+    color: black;
+}
+
+.actionLink:hover {
+    background-color: #6c8b47;
+    color: white;
+}
+
+#searchForm {
+    padding: 8px 16px;
+    text-align: center;
+}
+
+#searchForm input[type="text"] {
+    position: static;
+    text-align: left;
+}
+
+#searchForm input[type="submit"] {
+    display: inline-block;
 }

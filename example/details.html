@@ -1,0 +1,98 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Cookbook</title>
+    <link rel="stylesheet" href="/static/site.css">
+    <link rel="stylesheet" href="/static/recipe.css">
+    <link rel="stylesheet" href="/static/form.css">
+    <link rel="stylesheet" href="/static/comments.css">
+</head>
+
+<body>
+
+    <header>
+        <h1><a href="/"><img src="/assets/logo.png">My Cookbook</a></h1>
+        <nav>
+            <a id="catalogLink" href="/catalog" class="">Catalog</a>
+            <div id="user" style="display: inline-block;">
+                <a id="createLink" href="/create">Create Recipe</a>
+                <a id="logoutBtn" href="javascript:void(0)">Logout</a>
+            </div>
+            <div id="guest" style="display: none;">
+                <a id="loginLink" href="/login" class="">Login</a>
+                <a id="registerLink" href="/register">Register</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!---->
+        <section id="details">
+            <!--?lit$545493959$-->
+            <article>
+                <h2><!--?lit$545493959$-->Easy Lasagna</h2>
+                <div class="band">
+                    <div class="thumb"><img src="/assets/lasagna.jpg"></div>
+                    <div class="ingredients">
+                        <h3>Ingredients:</h3>
+                        <ul>
+                            <!--?lit$545493959$--><!---->
+                            <li><!--?lit$545493959$-->1 tbsp Ingredient 1</li><!----><!---->
+                            <li><!--?lit$545493959$-->2 cups Ingredient 2</li><!----><!---->
+                            <li><!--?lit$545493959$-->500 g Ingredient 3</li><!----><!---->
+                            <li><!--?lit$545493959$-->25 g Ingredient 4</li><!---->
+                        </ul>
+                    </div>
+                </div>
+                <div class="description">
+                    <h3>Preparation:</h3>
+                    <!--?lit$545493959$--><!---->
+                    <p><!--?lit$545493959$-->Prepare ingredients</p><!----><!---->
+                    <p><!--?lit$545493959$-->Mix ingredients</p><!----><!---->
+                    <p><!--?lit$545493959$-->Cook until done</p><!---->
+                </div>
+                <!--?lit$545493959$-->
+                <div class="controls">
+                    <a class="actionLink" href="/edit/3987279d-0ad4-4afb-8ca9-5b256ae3b298">✎ Edit</a>
+                    <a class="actionLink" href="javascript:void(0)">✖ Delete</a>
+                </div>
+            </article>
+            <!--?lit$545493959$-->
+            <div><!---->
+                <div class="section-title">
+                    Comments for <!--?lit$545493959$-->Easy Lasagna
+                </div>
+                <!--?lit$545493959$-->
+                
+                <article class="new-comment">
+                    <!--?lit$605183456$--><form><button class="button">Add comment</button></form>
+                </article>
+
+                <article class="new-comment">
+                    <!--?lit$545493959$-->
+                    <h2>New comment</h2>
+                    <form id="commentForm">
+                        <textarea name="content" placeholder="Type comment"></textarea>
+                        <input type="submit" value="Add comment">
+                    </form>
+                </article>
+                <div class="comments">
+                    <!--?lit$545493959$-->
+                    <ul>
+                        <!--?lit$545493959$--><!---->
+                        <li class="comment">
+                            <header><!--?lit$545493959$-->peter@abv.bg</header>
+                            <p><!--?lit$545493959$-->asdf</p>
+                        </li><!---->
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+</body>
+
+</html>
