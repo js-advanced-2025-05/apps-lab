@@ -26,6 +26,10 @@ export async function request(method, url, data) {
         throw error;
     }
 
+    if (res.status == 204) {
+        return res;
+    }
+
     return res.json();
 }
 

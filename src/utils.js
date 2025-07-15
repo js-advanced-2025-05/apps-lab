@@ -8,6 +8,11 @@ export function getUserData() {
     return userData;
 }
 
+export function clearUserData() {
+    sessionStorage.removeItem('userData');
+    userData = null;
+}
+
 export function updateNav() {
     userData = JSON.parse(sessionStorage.getItem('userData'));
 
@@ -18,10 +23,4 @@ export function updateNav() {
         document.getElementById('user').style.display = 'none';
         document.getElementById('guest').style.display = 'inline-block';
     }
-}
-
-export async function logout() {
-    sessionStorage.removeItem('userData');
-    userData = null;
-    updateNav();
 }

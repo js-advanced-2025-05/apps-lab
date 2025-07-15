@@ -1,8 +1,11 @@
 import page from '../node_modules/page/page.mjs';
 
-import { updateNav, logout } from './utils.js';
+import { clearUserData, updateNav } from './utils.js';
+
 import { addRender } from './middlewares/render.js';
 import { hasUser } from './middlewares/guards.js';
+
+import { logout } from './data/user.js';
 
 import { showHomeView } from './views/home.js';
 import { showCatalogView } from './views/catalog.js';
@@ -14,9 +17,10 @@ import { showEditView } from './views/edit.js';
 
 const logoutRef = document.getElementById('logoutBtn');
 
-logoutRef.addEventListener('click', async (e) => {
-    e.preventDefault();
-    await logout();
+logoutRef.addEventListener('click', () => {
+    logout();
+    clearUserData();
+    updateNav();
     page.redirect('/');
 });
 
