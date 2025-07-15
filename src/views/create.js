@@ -20,12 +20,6 @@ const createTemplate = (onCreate) => html`
     </section>`
 
 export function showCreateView(ctx) {
-    if (!getUserData()) {
-        ctx.page.redirect('/login');
-
-        return;
-    }
-
     ctx.render(createTemplate(onCreate))
 
     async function onCreate(event) {
@@ -43,9 +37,9 @@ export function showCreateView(ctx) {
                 throw new Error('All fields are required');
             }
 
-            await createRecipe(name, img, ingredients, steps)
+            const result = await createRecipe(name, img, ingredients, steps);
 
-            ctx.page.redirect('/catalog');
+            ctx.page.redirect('/catalog/' + result._id);
         } catch (error) {
             alert(error.message);
         }

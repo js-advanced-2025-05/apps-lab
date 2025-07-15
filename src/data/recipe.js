@@ -1,4 +1,4 @@
-import { get, post } from './request.js';
+import { get, post, put } from './request.js';
 
 const endpoints = {
     recent: '/data/recipes?sortBy=_createdOn%20desc&pageSize=3&select=_id%2Cname%2Cimg',
@@ -21,4 +21,8 @@ export async function getRecipeById(recipeId) {
 
 export async function createRecipe(name, img, ingredients, steps) {
     return post(endpoints.create, { name, img, ingredients, steps });
+}
+
+export async function updateRecipe(recipeId, recipeData) {
+    return put(endpoints.byId + recipeId, recipeData);
 }
