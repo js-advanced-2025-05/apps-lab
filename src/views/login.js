@@ -1,7 +1,6 @@
 import { html } from '../../node_modules/lit-html/lit-html.js';
 
 import { login } from '../data/user.js';
-import { navigate } from '../nav.js';
 import { saveUserData, updateNav } from '../utils.js';
 
 const loginTemplate = (onLogin) => html`
@@ -40,7 +39,7 @@ export function showLoginView(ctx) {
             });
     
             updateNav();
-            navigate('catalog-link');
+            ctx.page.redirect('/');
         } catch (error) {
             alert(error.message);
         }

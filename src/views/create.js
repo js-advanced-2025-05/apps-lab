@@ -1,10 +1,9 @@
 import { html } from '../../node_modules/lit-html/lit-html.js';
 
-import {  getUserData } from '../utils.js';
+import { getUserData } from '../utils.js';
 import { createRecipe } from '../data/recipe.js';
-import { navigate } from '../nav.js';
 
-const createTemplate = (onCreate) => html `
+const createTemplate = (onCreate) => html`
     <section id="create-view">
         <article>
                 <h2>New Recipe</h2>
@@ -22,7 +21,7 @@ const createTemplate = (onCreate) => html `
 
 export function showCreateView(ctx) {
     if (!getUserData()) {
-        navigate('login-link');
+        ctx.page.redirect('/login');
 
         return;
     }
@@ -46,7 +45,7 @@ export function showCreateView(ctx) {
 
             await createRecipe(name, img, ingredients, steps)
 
-            navigate('catalog-link');
+            ctx.page.redirect('/catalog');
         } catch (error) {
             alert(error.message);
         }

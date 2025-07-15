@@ -12,7 +12,7 @@ const detailsTemplate = ({ name, img, ingredients, steps }, isOwner) => html`
         </h2>
         <div class="band">
             <div class="thumb">
-                <img src=${img}>
+                <img src=${`/${img}`}>
             </div>
             <div class="ingredients">
                 <h3>Ingredients:</h3>
@@ -28,7 +28,9 @@ const detailsTemplate = ({ name, img, ingredients, steps }, isOwner) => html`
     </article>
 </section>`;
 
-export async function showDetailsView(ctx, recipeId) {
+export async function showDetailsView(ctx) {
+    const recipeId = ctx.params.id;
+
     ctx.render(html`<p style="color: white">Loading...</p>`);
 
     const userData = getUserData();

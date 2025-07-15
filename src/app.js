@@ -1,5 +1,7 @@
+import page from '../node_modules/page/page.mjs';
+
 import { updateNav, logout } from './utils.js';
-import { initNav, navigate } from './nav.js';
+import { addRender } from './middlewares/render.js';
 
 import { showCatalogView } from './views/catalog.js';
 import { showLoginView } from './views/login.js';
@@ -7,24 +9,21 @@ import { showRegisterView } from './views/register.js';
 import { showCreateView } from './views/create.js';
 import { showDetailsView } from './views/details.js';
 
-const logoutRef = document.getElementById('logoutBtn')
-
-const views = {
-    'catalog-link': showCatalogView,
-    'login-link': showLoginView,
-    'register-link': showRegisterView,
-    'create-link': showCreateView,
-    'details': showDetailsView
-};
+const logoutRef = document.getElementById('logoutBtn');
 
 logoutRef.addEventListener('click', async (e) => {
     e.preventDefault();
     await logout();
-    navigate('catalog-link');
+    page.redirect('/');
 });
 
-initNav(views);
+page(addRender);
+page('/', showCatalogView);
+page('/catalog/:id', showDetailsView);
+page('/create', showCreateView);
+page('/login', showLoginView);
+page('/register', showRegisterView);
 
 updateNav();
 
-navigate('catalog-link');
+page.start();
