@@ -3,6 +3,7 @@ import page from '../node_modules/page/page.mjs';
 import { updateNav, logout } from './utils.js';
 import { addRender } from './middlewares/render.js';
 
+import { showHomeView } from './views/home.js';
 import { showCatalogView } from './views/catalog.js';
 import { showLoginView } from './views/login.js';
 import { showRegisterView } from './views/register.js';
@@ -18,7 +19,8 @@ logoutRef.addEventListener('click', async (e) => {
 });
 
 page(addRender);
-page('/', showCatalogView);
+page('/', showHomeView);
+page('/catalog', showCatalogView);
 page('/catalog/:id', showDetailsView);
 page('/create', showCreateView);
 page('/login', showLoginView);
